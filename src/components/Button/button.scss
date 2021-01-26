@@ -1,0 +1,74 @@
+@import "Scss/__mixins.scss";
+@import "Scss/__typography.scss";
+
+.button, a.button{
+    @include font-style();
+    font-weight: bold;
+    padding: 0.5rem;//.36rem 0.65rem;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    border-radius: $radius;
+    background: transparent;
+    &:disabled{
+       cursor: not-allowed;
+       border: 1px solid transparent;
+       background: #ebebeb !important;
+       color: #848484;
+    }
+    &.white{
+        background: #fff;
+        border: 1px solid #e1e1e1;
+    }
+    &.clear {
+        border-width: 1px;
+    }
+    &.clear:not(:disabled){
+        background: transparent;
+        border: 1px solid #262626;
+        &:hover{
+            color: initial;
+            background: #eee;
+        }
+    }
+    &.primary:not(:disabled){ 
+        background: #2a5298;
+        color: #fff;
+        &:hover{
+            background: #1b4285;
+        }
+    }
+    &:focus{
+        @include on-focus();
+    }
+    &:hover:not(:disabled){
+        text-decoration: none;
+        -webkit-box-shadow:inset 0 10px 20px rgba(255,255,255, 0.10);
+        -moz-box-shadow: inset 0 10px 20px rgba(255,255,255, 0.10);
+        box-shadow: inset 0 10px 20px rgba(255,255,255, 0.10);
+    }
+    &:active:not(:disabled) {
+        -webkit-box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
+        -moz-box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
+        box-shadow: inset 0 2px 2px rgba(0,0,0, 0.3), inset 0 10px 20px rgba(0,0,0, 0.08);
+    }
+    &:visited:not(:disabled){
+        color: #fff;
+    }
+}
+.button__group{
+    display: inline-block;
+    .button { 
+        display: inline;
+        border-radius: 0;
+        margin: 0 -1px 0 0;
+        &:first-child:not(:only-of-type){
+            border-bottom-left-radius: $radius !important;
+            border-top-left-radius: $radius !important;
+        } 
+        &:last-child:not(:only-of-type){
+            border-bottom-right-radius: $radius !important;
+            border-top-right-radius: $radius !important;
+        }
+    }
+}

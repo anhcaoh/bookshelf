@@ -1,0 +1,90 @@
+@import "./_variables";
+@import "./_spacing";
+@import "./_display";
+@import "./_typography";
+
+body {
+    @include font-style();
+    background: #f1f1f1;
+} 
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+// Input Textarea
+input, 
+textarea, 
+select{
+    border: $input--border;
+    border-radius: $radius;
+    @include font-style();
+    @include input-padding(0.5);
+    &:not([type="radio"]){
+        width: max-content;
+    }
+}
+main{
+    padding: 0 0.75rem;
+}
+svg{
+    vertical-align: text-bottom;
+}
+label{
+    margin-bottom: 0.5rem;
+    display: block;
+}
+label[for]{
+    margin-right: 0.5rem;
+}
+.line-height--2{
+    line-height: 2;
+}
+.float--left{
+    float: left;
+}
+.float--right{
+    float: right;
+}
+.clearfix{
+    clear: both;
+    overflow: auto;
+}
+.absolute{
+    position: absolute;
+}
+.relative, .block{
+    position: relative;
+}
+.border--bottom{
+    border-bottom: 1px solid #e1e1e1;
+}
+.indent-left--1{
+    margin-left: -0.5rem;
+}
+.glass{
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    box-shadow: $box-shadow;
+    background: #ffffff87;
+    border: 1px solid #eaeaea;
+    &:hover{
+        box-shadow: 1px 0px 0px 4px #bcbcbc14;
+    }
+}
+.circle{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 2rem;
+    left: 24%;
+    z-index: -1;
+    background: #f5f5f5d9;
+    border-radius: 50%;
+}
+.carousel{
+    overflow: auto;
+    white-space: nowrap;
+    height: 450px;
+}

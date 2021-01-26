@@ -1,0 +1,5 @@
+export const FETCH_BOOKS_REQUESTED = "FETCH_BOOKS_REQUESTED";
+export const SET_RESULTS = "SET_RESULTS";
+export const SET_LIBRARY = "SET_LIBRARY";
+export const ADD_TO_LIBRARY = "ADD_TO_LIBRARY";
+export const RESET = "RESET";

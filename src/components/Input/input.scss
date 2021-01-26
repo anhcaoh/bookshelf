@@ -1,0 +1,35 @@
+@import "Scss/__mixins";
+input { 
+    vertical-align: bottom;
+    &:focus{
+        @include on-focus();
+    }
+    &.invalid{
+        border-color: #cd1e0a;
+    }
+    &.valid{
+        border-color: forestgreen;
+    }
+    &:read-only{
+        opacity: 0.8;
+        border-color: #00080027;
+        cursor: not-allowed;
+    }
+}
+.input__group{
+    > select {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-right: 0;
+        width: 86px !important;
+    }
+    > input {
+        border-radius:0;
+        width: 285px !important;
+    }
+    > .button {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-left: 0 !important;
+    }
+}

@@ -1,0 +1,60 @@
+@import "Scss/__variables";
+[type="radio"] {
+  vertical-align: text-top;
+  margin-top: 8px;
+}
+.radio {
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-gap: 0.5em;
+  cursor: pointer;
+
+  &:focus-within {
+    .radio__label {
+      opacity: 1;
+    }
+  }
+}
+
+.radio__label {
+  line-height: 1;
+  transition: 180ms all ease-in-out;
+  opacity: 0.8;
+}
+
+.radio__input {
+  display: flex;
+
+  input[type="radio"] {
+    opacity: 0;
+    margin: 0.1rem;
+    width: 0;
+    height: 0;
+
+    &:focus + .radio__control {
+      box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em $primary--color;
+      border-color: $primary--color;
+    }
+  }
+  input[type="radio"]:checked + .radio__control {
+    border-color: $primary--color;
+  }
+  input[type="radio"]:checked + .radio__control:after {
+    content: "";
+    height: inherit;
+    display: block;
+    width: inherit;
+    border-color: $primary--color;
+    background: radial-gradient($primary--color 50%, rgba(255, 0, 0, 0) 50%);
+    margin-top: -0.1rem;
+    margin-left: -0.1rem;
+  }
+  .radio__control {
+    display: block;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 50%;
+    border: 0.1em solid currentColor;
+    transform: translateY(0em);
+  }
+}
