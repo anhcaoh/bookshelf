@@ -26,7 +26,7 @@ const SearchBook = ({className, results}) => {
     if(term){
       setLoading(true);
       const callback = (data) => {
-        setBooks(data);
+        if(data) setBooks(data);
         setLoading(false);
       };
       fetchBooks({searchType, term, page, limit, callback});

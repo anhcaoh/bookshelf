@@ -11,10 +11,10 @@ const persistConfig = {
 };
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 const sagaMiddleware = createSagaMiddleware();
-const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+const devTools = (window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() || null);
 const store = createStore(
     persistedReducer,
-    compose( applyMiddleware(sagaMiddleware), devTools ));
+    compose( applyMiddleware(sagaMiddleware), devTools ) );
 let persistor = persistStore(store);
 sagaMiddleware.run(customSagas);
 export { persistor };
