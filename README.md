@@ -1,5 +1,5 @@
 # Bookshelf
-Search for book results and add to or remove from bookshelf
+Search for books and add-to or remove-from bookshelf
 
 ## Setup
 `npm install`
@@ -7,5 +7,5 @@ Search for book results and add to or remove from bookshelf
 ## Local Dev
 `npm start`
 
-### Demo
+## Demo
 Git clone repo then open /build/index.html in a browser
